@@ -1,0 +1,184 @@
+:root {
+  --tint: #2c2416;
+  --pais: #2c2416;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  background: linear-gradient(180deg, #d4e8f5 0%, #f5efe6 55%, #f0e6d8 100%);
+  color: var(--tint);
+  line-height: 1.45;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  margin: 0;
+}
+
+.pais,
+#avaleht,
+.tegevused {
+  width: min(28rem, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pais {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.8rem;
+  padding: 0.4rem 0.8rem;
+  background: #e8f3fb;
+  color: var(--pais);
+}
+
+.logo {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pais nav {
+  display: flex;
+  gap: 0.7rem;
+  overflow: auto;
+  font-size: 0.82rem;
+}
+
+.pais nav a {
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pealeht {
+  display: block;
+  width: 100%;
+  max-height: 42vh;
+  object-fit: cover;
+}
+
+#tooted {
+  padding: 1.1rem 0 0.4rem;
+}
+
+.grupid {
+  position: relative;
+  width: min(28rem, 100%);
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.grupid::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #fff;
+}
+
+.grupp + .grupp {
+  margin-top: 6px;
+}
+
+.grupp + .grupp::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background: #fff;
+  margin-left: calc(30% + 2rem);
+  margin-right: 4px;
+}
+
+.grupp > button {
+  display: block;
+  width: calc(70% - 4px);
+  margin-left: auto;
+  margin-right: 4px;
+  min-height: 2.7rem;
+  padding: 0.55rem 1rem;
+  border: 0;
+  border-radius: 2rem 0 0 2rem;
+  color: #fff;
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: right;
+  text-shadow: 0 1px 3px #000;
+  cursor: pointer;
+}
+
+.grupp:nth-child(odd) > button {
+  background: #5ba3d9;
+}
+
+.grupp:nth-child(even) > button {
+  background: #e8884a;
+}
+
+.tegevused {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.4rem 1rem 2rem;
+}
+
+.tegevus {
+  width: min(16rem, 78%);
+  padding: 0.55rem 1rem;
+  border: 0;
+  border-radius: 2rem;
+  background: #5ba3d9;
+  color: #fff;
+  font: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 0 1px 3px #000;
+  cursor: pointer;
+}
+
+@media (min-width: 48rem) {
+  .pais,
+  #avaleht,
+  .tegevused,
+  .grupid {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .grupid::after {
+    left: 0;
+    right: auto;
+  }
+
+  .grupp + .grupp::before {
+    margin-left: 4px;
+    margin-right: calc(30% + 2rem);
+  }
+
+  .grupp > button {
+    margin-left: 4px;
+    margin-right: auto;
+    padding-left: 1rem;
+    border-radius: 0 2rem 2rem 0;
+    text-align: left;
+  }
+
+  .tegevused {
+    align-items: flex-start;
+  }
+}
