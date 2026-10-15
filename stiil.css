@@ -30,7 +30,8 @@ main {
 
 .pais,
 #avaleht,
-.tegevused {
+.tegevused,
+.grupid {
   width: min(28rem, 100%);
   margin-left: auto;
   margin-right: auto;
@@ -82,9 +83,6 @@ main {
 
 .grupid {
   position: relative;
-  width: min(28rem, 100%);
-  margin-left: auto;
-  margin-right: 0;
 }
 
 .grupid::after {
@@ -159,14 +157,6 @@ main {
 }
 
 @media (min-width: 48rem) {
-  .pais,
-  #avaleht,
-  .tegevused,
-  .grupid {
-    margin-left: 0;
-    margin-right: auto;
-  }
-
   .grupid::after {
     left: 0;
     right: auto;
